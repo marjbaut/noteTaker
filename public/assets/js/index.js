@@ -181,3 +181,5 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
+//   read the file , get the infor, push the data and then write it(push and map)

@@ -26,17 +26,17 @@ app.post('/api/notes', (req,res)=>{
             console.error(err);
           } else {
             // Convert string into JSON object
-            const parsedReviews = JSON.parse(data);
+            const parsedNote = JSON.parse(data);
     
             // Add a new review
-            parsedReviews.push(newNote); 
+            parsedNote.push(newNote); 
             fs.writeFile(
                 './db/db.json',
-                JSON.stringify(parsedReviews, null, 4),
+                JSON.stringify(parsedNote, null, 4),
                 (writeErr) =>
                   writeErr
                     ? console.error(writeErr)
-                    : console.info('Successfully updated reviews!')
+                    : console.info('Successfully added a note!')
               );
         }
     })
@@ -47,7 +47,7 @@ app.post('/api/notes', (req,res)=>{
   console.log(response);
   res.status(201).json(response);
 }else {
-    res.status(500).json('Error in posting review');
+    res.status(500).json('Error in adding a note');
   }
 });
 

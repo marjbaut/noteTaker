@@ -51,7 +51,7 @@ app.post('/api/notes', (req,res)=>{
   }
 });
 
-
+ 
 // localhost:3001/notes
 app.get('/notes', (req,res)=>{
     res.sendFile(path.join(__dirname, 'public/notes.html'))
